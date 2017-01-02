@@ -14,4 +14,5 @@ on some chosen variables.
 
 
 Case study from the book _"R in a Nutshell"_ by Joseph Adler.
+
 For more information: [R in a Nutshell](https://www.amazon.com/Nutshell-Desktop-Quick-Reference-OReilly/dp/144931208X).
