@@ -13,9 +13,9 @@ fluidPage(
     h1("Baseball Prediction", style = 'color:#09c0f5')
   ),
   
-  h3("Estimation for Runs Scored by a Baseball Team", style = 'color:#09c0f5'),
+  h3("Runs Scored by a Baseball Team", style = 'color:#09c0f5'),
   p(paste("This app uses data from the Joseph Adler data set.",
-          "It comprises data from 2000 - 2008 for every major league baseball team", 
+          "It comprises data from 2000 - 2008 for every major league baseball team,", 
           "applies a linear model which predicts the number of runs scored by a team",
           "and provide the prediction confidence interval based on the variables below.")),
   br(),
