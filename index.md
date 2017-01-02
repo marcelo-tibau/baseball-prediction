@@ -1,0 +1,71 @@
+---
+title       : Baseball Prediction
+subtitle    : Runs Scored by a Baseball Team
+author      : Marcelo Tibau
+job         : Developing Data Products Course project
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Slide 2
+### Overview
+This app uses data from the Joseph Adler data set. It comprises data from 2000 - 2008 for every major league baseball team, applies a linear model which predicts the number of runs scored by a team, and provide the prediction confidence interval based on some chosen variables.
+
+A demo for the app can be found at: [https://marcelotibau.shinyapps.io/baseball-prediction/](https://marcelotibau.shinyapps.io/baseball-prediction/)
+
+Source code for ui.R and server.R files are available on the GitHub repo: [https://github.com/marcelo-tibau/baseball-prediction](https://github.com/marcelo-tibau/baseball-prediction)
+
+---
+
+## Slide 3
+### How it works
+Use the sliders to adjust the inputs. The inputs comprises of the following variables:
+
+1. Singles
+2. Doubles
+3. Triples
+4. Home Runs
+5. Walks
+6. Hit by Pitch
+7. Sacrifice Flies
+8. Stolen Bases
+9. Caught Stealing
+
+The adjustment will impact on the number of runs scored and the resulting confidence interval.
+
+---
+
+## Slide 4
+### The modelruns.mdl
+The model uses the following linear model: 
+
+```{r}
+summary(runs.mdl)
+```
+
+---
+## Slide 5
+### Plots
+*Residuals Vs Fitted*
+The residual data of a linear regression model is the difference between the observed data of the dependent variable y and the fitted values y. If we find equally spread residuals around a horizontal line without distinct patterns, it's a good indication that we don't have non-linear relationships. 
+
+*Normal Q-Q*
+The Q-Q plot, or quantile-quantile plot, is a graphical tool to help us assess if a set of data plausibly came from some theoretical distribution such as a Normal or exponential. If both sets of quantiles came from the same distribution, we should see the points forming a line that's roughly straight. 
+
+*Scale-Location*
+It's also called Spread-Location plot. This plot shows if residuals are spread equally along the ranges of predictors. This is how is checked the assumption of equal variance (homoscedasticity). If there's a horizontal line with equally (randomly) spread points, it means the scale-location is good.
+
+*Residuals Vs Leverage*
+This plot helps us to find influential cases. We watch out for outlying values at the upper right corner or at the lower right corner. Those spots are the places where cases can be influential against a regression line. When cases are outside of the Cook's distance (meaning they have high Cook's distance scores), the cases are influential to the regression results, so the regression results will be altered if we exclude those cases. 
+
+Let's see how it goes in this particular model:
+
+```{r}
+plot(runs.mdl)
+```
+
+
