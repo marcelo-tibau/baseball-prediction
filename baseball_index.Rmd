@@ -1,0 +1,49 @@
+---
+title: "Baseball Prediction"
+author: "Marcelo Tibau"
+date: "2 de janeiro de 2017"
+output: 
+  ioslides_presentation: 
+    smaller: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+
+This app uses data from the Joseph Adler data set. It comprises data from 2000 - 2008 for every major league baseball team, applies a linear model which predicts the number of runs scored by a team, and provide the prediction confidence interval based on some chosen variables.
+
+A demo for the app can be found at: [https://marcelotibau.shinyapps.io/baseball-prediction/](https://marcelotibau.shinyapps.io/baseball-prediction/).
+
+Source code for ui.R and server.R files are available on the GitHub repo: [https://github.com/marcelo-tibau/baseball-prediction](https://github.com/marcelo-tibau/baseball-prediction)
+
+The inputs comprises of the following variables: Singles; Doubles; Triples;Home Runs; Walks; Hit by Pitch; Sacrifice Flies; Stolen Bases; and Caught Stealing. 
+
+The adjustment will impact on the number of runs scored and the resulting confidence interval.
+
+## Residuals Vs Fitted
+The residual data of a linear regression model is the difference between the observed data of the dependent variable y and the fitted values y. If we find equally spread residuals around a horizontal line without distinct patterns, it's a good indication that we don't have non-linear relationships. 
+```{r}
+library(nutshell)
+library(lattice)
+data("team.batting.00to08")
+runs.mdl <- lm(
+  formula=runs~singles+doubles+triples+homeruns+
+    walks+hitbypitch+sacrificeflies+
+    stolenbases+caughtstealing,
+  data=team.batting.00to08)
+```
+
+## Residuals Vs Fitted (cont)
+
+```{r}
+plot(runs.mdl, 1)
+```
+
+## Normal Q-Q
+The Q-Q plot, or quantile-quantile plot, is a graphical tool to help us assess if a set of data plausibly came from some theoretical distribution such as a Normal or exponential. If both sets of quantiles came from the same distribution, we should see the points forming a line that's roughly straight. 
+```{r}
+plot(runs.mdl, 2)
+```
