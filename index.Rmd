@@ -40,7 +40,7 @@ The adjustment will impact on the number of runs scored and the resulting confid
 ---
 
 ## Slide 4
-### The modelruns.mdl
+### The model
 The model uses the following linear model: 
 
 ```{r}
