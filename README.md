@@ -9,6 +9,7 @@ on some chosen variables.
 
 ## Provided Links
 #### App Demo:
+[https://marcelotibau.shinyapps.io/baseball-prediction/](https://marcelotibau.shinyapps.io/baseball-prediction/)
 
 #### Pitch Presentation:
 
