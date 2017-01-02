@@ -12,7 +12,7 @@ on some chosen variables.
 [https://marcelotibau.shinyapps.io/baseball-prediction/](https://marcelotibau.shinyapps.io/baseball-prediction/)
 
 #### Pitch Presentation:
-
+[http://rpubs.com/marcelo_tibau/baseball-prediction](http://rpubs.com/marcelo_tibau/baseball-prediction)
 
 Case study from the book _"R in a Nutshell"_ by Joseph Adler.
 
