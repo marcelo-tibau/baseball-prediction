@@ -16,7 +16,7 @@ fluidPage(
   h3("Estimation for Runs Scored by a Baseball Team", style = 'color:#09c0f5'),
   p(paste("This app uses data from the Joseph Adler data set.",
           "It comprises data from 2000 - 2008 for every major league baseball team", 
-          "and applies a linear model which predicts the number of runs scored by a team",
+          "applies a linear model which predicts the number of runs scored by a team",
           "and provide the prediction confidence interval based on the variables below.")),
   br(),
   p(paste("Use the sliders to adjust the inputs.",
@@ -66,6 +66,6 @@ fluidPage(
   br(),
   p(style = 'color:#af09f5', 'Case study from',
     a("R in a Nutshell", 
-      href="http://web.udl.es/Biomath/Bioestadistica/R/Manuals/r_in_a_nutshell.pdf"),
+      href="https://www.amazon.com/Nutshell-Desktop-Quick-Reference-OReilly/dp/144931208X"),
     "by Joseph Adler, 2010.")
 )
